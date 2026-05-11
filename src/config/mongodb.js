@@ -1,5 +1,14 @@
 import { connect } from "mongoose";
-process.loadEnvFile()
+
+// En producción (Render) no existe archivo .env físico;
+// si no está, usamos las variables del entorno sin fallar.
+try {
+  process.loadEnvFile();
+} catch (error) {
+  if (error?.code !== "ENOENT") {
+    throw error;
+  }
+}
 
 const connectDb = async () => {
   try {
