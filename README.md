@@ -12,6 +12,7 @@ API REST del proyecto Ruteando.
 - modulo de soporte con tickets
 - endpoint de metricas de operacion
 - log de errores HTTP en archivos JSON por fecha
+- hardening para despliegue en Render (trust proxy + rate limiting de login)
 
 ## Requisitos
 
@@ -49,6 +50,12 @@ npm run dev
 Servidor: `http://localhost:3000`
 
 En Render, el servicio usa automáticamente `PORT` del entorno.
+
+## Configuracion de producción (Render)
+
+- `app.set('trust proxy', 1)` habilitado para procesar correctamente `X-Forwarded-For` detrás de proxy.
+- rate limiter de login configurado para evitar bloqueos excesivos en producción.
+- recomendación: definir `URI_DB` y `JWT_SECRET` como variables de entorno en Render.
 
 ## Scripts utiles
 
