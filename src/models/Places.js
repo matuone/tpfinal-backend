@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // Categorías disponibles para los lugares
-const CATEGORIES = ["CASA", "Restaurante", "Parque", "Museo", "Tienda", "Playa", "Montaña", "Otro"];
+const CATEGORIES = ["Casa", "Restaurante", "Parque", "Museo", "Tienda", "Playa", "Montaña", "Otro"];
 
 const placeSchema = new mongoose.Schema({
   name: { type: String, required: true },

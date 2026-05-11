@@ -6,7 +6,7 @@ API REST del proyecto Ruteando.
 
 - autenticacion con JWT (registro y login)
 - CRUD de lugares por usuario autenticado
-- **categorías de lugares** (CASA, Restaurante, Parque, Museo, Tienda, Playa, Montaña, Otro)
+- **categorías de lugares** (Casa, Restaurante, Parque, Museo, Tienda, Playa, Montaña, Otro)
 - **geocodificación inversa** - obtener dirección legible desde coordenadas (API Nominatim/OpenStreetMap)
 - **filtrado avanzado** de lugares por nombre, categoría, fecha y proximidad
 - modulo de soporte con tickets
