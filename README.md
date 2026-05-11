@@ -44,6 +44,8 @@ npm run dev
 
 Servidor: `http://localhost:3000`
 
+En Render, el servicio usa automáticamente `PORT` del entorno.
+
 ## Scripts utiles
 
 - `npm run dev`: levanta la API en modo desarrollo

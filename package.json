@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "node --watch ./src/index.js",
-    "start": "node index.js",
+    "start": "node ./src/index.js",
     "seed:support": "node ./src/scripts/seedSupportTickets.js",
     "seed:places": "node ./src/scripts/seedPlaces.js"
   },

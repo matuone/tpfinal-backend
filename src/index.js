@@ -8,7 +8,7 @@ import { authMiddleware } from "./middleware/authMiddleware.js";
 import { errorLoggerMiddleware } from "./middleware/errorLoggerMiddleware.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -21,6 +21,6 @@ app.use("/places", authMiddleware, placesRouter);
 app.use("/support", authMiddleware, supportRouter);
 
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en puerto ${PORT}`);
   connectDb();
 });
