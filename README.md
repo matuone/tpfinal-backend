@@ -127,3 +127,66 @@ Aplicaciones concretas:
 - adición de campo `address` al modelo Place generado automáticamente
 - integración de Nominatim API para reverse geocoding sin autenticación requerida
 - filtrado avanzado con búsqueda, categoría, rango de fechas y proximidad
+
+## Cobertura de consigna
+
+### 1. Pre-desarrollo con IA
+
+Aunque este repositorio se enfoca en backend, el producto fue definido con IA antes de la implementación.
+
+Identidad del producto definida:
+
+- Nombre: Ruteando
+- Descripción: bitácora mobile-first para registrar lugares reales visitados
+- Público objetivo: personas que recorren la ciudad y quieren guardar lugares memorables
+- Propuesta de valor: registrar rápidamente lugares físicos y revisarlos luego en un mapa propio
+
+Prompt base usado en pre-desarrollo:
+
+```text
+Quiero una idea de app mobile-first para registrar lugares reales visitados por una persona. Necesito nombre, público objetivo, propuesta de valor y una identidad simple.
+```
+
+Iteración 1 del prompt:
+
+```text
+Quiero una idea de app mobile-first enfocada en exploración urbana. Debe sentirse personal, simple y útil para registrar lugares favoritos desde el celular. Dame nombre, descripción, público objetivo, propuesta de valor y tono de marca. Evita una red social y prioriza una bitácora personal con mapa.
+```
+
+Iteración 2 del prompt:
+
+```text
+Sobre la propuesta anterior, ajusta la identidad para que sea clara para Argentina: define nombre final, slogan corto, perfil de usuario principal, problema concreto que resuelve en salidas diarias y 3 diferenciales frente a usar notas del celular.
+```
+
+### 2. Desarrollo
+
+Requisitos cubiertos por este repositorio:
+
+- backend funcional con API REST
+- persistencia con base de datos real MongoDB
+- más de 3 endpoints
+- documentación del uso de IA para generación de código, debugging y decisiones técnicas
+
+### 3. Post-desarrollo
+
+Requisitos cubiertos por este repositorio:
+
+- sistema de tickets con tipos bug, mejora y consulta
+- 5 tickets simulados con prioridad y estado
+- métricas de seguimiento de operación
+
+Prompt usado para análisis post-desarrollo:
+
+```text
+Con estas métricas de soporte: tickets por estado, tickets por prioridad, errores en 7 días y fallos de login, redacta conclusiones breves sobre estabilidad del producto y próximas mejoras recomendadas.
+```
+
+### Entregables y bonus cubiertos
+
+- repositorio backend
+- README con descripción, ejecución y uso de IA
+- bonus: autenticación JWT
+- bonus: base de datos real
+- bonus: dashboard simple de métricas
+- bonus: deploy productivo en Render
