@@ -10,6 +10,9 @@ import { errorLoggerMiddleware } from "./middleware/errorLoggerMiddleware.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// ✅ Importante para producción (Render, Vercel, etc) - permite leer IP real
+app.set('trust proxy', 1);
+
 app.use(express.json());
 app.use(cors());
 
