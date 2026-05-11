@@ -1,0 +1,26 @@
+[
+  {
+    "time": "2026-04-29T21:55:03.262Z",
+    "method": "POST",
+    "url": "/places",
+    "status": 401,
+    "ip": "::1",
+    "userAgent": "bruno-runtime/3.2.2"
+  },
+  {
+    "time": "2026-04-29T21:55:14.318Z",
+    "method": "GET",
+    "url": "/places/69ec010feac51db5c5bae422",
+    "status": 401,
+    "ip": "::1",
+    "userAgent": "bruno-runtime/3.2.2"
+  },
+  {
+    "time": "2026-04-29T21:55:24.970Z",
+    "method": "GET",
+    "url": "/places/69ec010feac51db5c5bae422",
+    "status": 403,
+    "ip": "::1",
+    "userAgent": "bruno-runtime/3.2.2"
+  }
+]

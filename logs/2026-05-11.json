@@ -1,0 +1,74 @@
+[
+  {
+    "time": "2026-05-11T20:27:58.614Z",
+    "method": "GET",
+    "url": "/places",
+    "status": 403,
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1"
+  },
+  {
+    "time": "2026-05-11T20:27:58.615Z",
+    "method": "GET",
+    "url": "/places",
+    "status": 403,
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1"
+  },
+  {
+    "time": "2026-05-11T20:28:17.722Z",
+    "method": "POST",
+    "url": "/places",
+    "status": 403,
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1"
+  },
+  {
+    "time": "2026-05-11T20:28:24.854Z",
+    "method": "GET",
+    "url": "/places",
+    "status": 403,
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1"
+  },
+  {
+    "time": "2026-05-11T20:28:24.856Z",
+    "method": "GET",
+    "url": "/places",
+    "status": 403,
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1"
+  },
+  {
+    "time": "2026-05-11T20:28:26.468Z",
+    "method": "GET",
+    "url": "/places",
+    "status": 403,
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1"
+  },
+  {
+    "time": "2026-05-11T20:28:26.469Z",
+    "method": "GET",
+    "url": "/places",
+    "status": 403,
+    "ip": "::1",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1"
+  },
+  {
+    "time": "2026-05-11T21:12:36.238Z",
+    "method": "POST",
+    "url": "/auth/login",
+    "status": 400,
+    "ip": "::1",
+    "userAgent": "node"
+  },
+  {
+    "time": "2026-05-11T21:26:20.622Z",
+    "method": "POST",
+    "url": "/auth/login",
+    "status": 400,
+    "ip": "::1",
+    "userAgent": "node"
+  }
+]
