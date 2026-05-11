@@ -6,6 +6,9 @@ API REST del proyecto Ruteando.
 
 - autenticacion con JWT (registro y login)
 - CRUD de lugares por usuario autenticado
+- **categorías de lugares** (Restaurante, Parque, Museo, Tienda, Playa, Montaña, Otro)
+- **geocodificación inversa** - obtener dirección legible desde coordenadas (API Nominatim/OpenStreetMap)
+- **filtrado avanzado** de lugares por nombre, categoría, fecha y proximidad
 - modulo de soporte con tickets
 - endpoint de metricas de operacion
 - log de errores HTTP en archivos JSON por fecha
@@ -14,6 +17,7 @@ API REST del proyecto Ruteando.
 
 - Node.js 20+
 - acceso a MongoDB Atlas
+- conexion a internet para Nominatim API (geocodificacion)
 
 ## Configuracion
 
@@ -61,11 +65,25 @@ En Render, el servicio usa automáticamente `PORT` del entorno.
 
 ### Places
 
-- `GET /places`
+- `GET /places` - listar lugares del usuario (con filtrado opcional)
+  - Query params:
+    - `?name=texto` - filtrar por nombre (case-insensitive)
+    - `?category=Restaurante` - filtrar por categoría
+    - `?startDate=2024-01-01&endDate=2024-12-31` - rango de fechas
+    - `?lat=<num>&lng=<num>&radius=<km>` - filtrar por proximidad en km
+- `GET /places/categories/list` - obtener categorías disponibles
 - `GET /places/:id`
-- `POST /places`
-- `PATCH /places/:id`
+- `POST /places` - crear lugar (incluye geocodificación inversa automática)
+  - Body:
+    ```json
+    { "name": "string", "lat": number, "lng": number, "category": "string (opcional)" }
+    ```
+- `PATCH /places/:id` - actualizar lugar
 - `DELETE /places/:id`
+
+**Nota:** Los lugares creados incluyen automáticamente:
+- `address`: dirección legible obtenida desde coordenadas (ej: "Calle Florida 1000, Buenos Aires")
+- `category`: categoría seleccionada
 
 ### Support
 
@@ -81,15 +99,24 @@ Prompts aplicados en desarrollo:
 - diseño de endpoints para post-desarrollo con tickets y métricas
 - propuesta de estructura de controladores y rutas para mantener separación por dominio
 - apoyo en debugging de filtros por usuario y consistencia del CRUD
+- **implementación de categorías y geocodificación inversa** para mejorar UX y estructura de datos
 
-Prompt representativo:
+Prompts representativos:
 
 ```text
-Sobre una API Express con autenticación JWT y CRUD de lugares, diseña un módulo de soporte con tickets (bug, mejora, consulta) y un endpoint de métricas para post-lanzamiento.
+Diseña un módulo de soporte con tickets (bug, mejora, consulta) y un endpoint de métricas para post-lanzamiento.
 ```
 
-Aplicación concreta:
+```text
+Agrega categorías de lugares y geocodificación inversa usando OpenStreetMap Nominatim API para mostrar dirección legible en lugar de solo coordenadas.
+```
+
+Aplicaciones concretas:
 
 - creación de `/support/tickets` y `/support/metrics`
 - semilla automática de tickets para la simulación de soporte
 - métricas de estado/prioridad y errores recientes para seguimiento
+- adición de campo `category` al modelo Place con enum de valores
+- adición de campo `address` al modelo Place generado automáticamente
+- integración de Nominatim API para reverse geocoding sin autenticación requerida
+- filtrado avanzado con búsqueda, categoría, rango de fechas y proximidad

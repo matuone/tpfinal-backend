@@ -1,12 +1,15 @@
 import { Router } from "express";
-import { getPlaces, addPlace, getPlace, updatePlace, deletePlace } from "../controllers/placesController.js";
+import { getPlaces, addPlace, getPlace, updatePlace, deletePlace, getCategories } from "../controllers/placesController.js";
 import { Place } from "../models/Places.js";
 
 const router = Router();
 
 // Aquí irán las rutas relacionadas con "places"
 
-// GET: listar todos
+// GET: obtener categorías disponibles
+router.get("/categories/list", getCategories);
+
+// GET: listar todos (con filtrado avanzado)
 router.get("/", getPlaces);
 
 // GET: obtener uno por id
