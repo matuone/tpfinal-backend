@@ -4,7 +4,8 @@ API REST del proyecto Ruteando.
 
 ## Funcionalidades
 
-- autenticacion con JWT (registro y login)
+- autenticacion con JWT (registro y login) con expiración de 1 hora
+- **tickets de soporte preinstalados**: al registrarse, cada usuario recibe 5 tickets de ejemplo automáticamente
 - CRUD de lugares por usuario autenticado
 - **categorías de lugares** (Casa, Restaurante, Parque, Museo, Tienda, Playa, Montaña, Otro)
 - **geocodificación inversa** - obtener dirección legible desde coordenadas (API Nominatim/OpenStreetMap)
@@ -99,6 +100,25 @@ En Render, el servicio usa automáticamente `PORT` del entorno.
 - `PATCH /support/tickets/:id`
 - `GET /support/metrics`
 
+## Seed automático de tickets en registro
+
+Al crear una cuenta nueva, el backend inserta automáticamente 5 tickets de ejemplo en la cuenta del usuario:
+
+| Título | Tipo | Prioridad | Estado |
+|---|---|---|---|
+| No se guarda un lugar cuando rechazo geolocalización | bug | alta | abierto |
+| Agregar etiquetas a los lugares favoritos | mejora | media | en_progreso |
+| Consulta sobre expiración de sesión | consulta | baja | resuelto |
+| El mapa no centra el último lugar registrado | bug | media | abierto |
+| Métrica de errores de autenticación en dashboard | mejora | alta | en_progreso |
+
+Esto garantiza que la sección de soporte y métricas sea visible desde el primer acceso, sin necesidad de ejecutar scripts de seed manualmente.
+
+Archivos involucrados:
+
+- `src/controllers/authController.js` - función `register` con `Ticket.insertMany()`
+- `src/models/Ticket.js`
+
 ## Uso de IA en backend
 
 Prompts aplicados en desarrollo:
@@ -107,6 +127,7 @@ Prompts aplicados en desarrollo:
 - propuesta de estructura de controladores y rutas para mantener separación por dominio
 - apoyo en debugging de filtros por usuario y consistencia del CRUD
 - **implementación de categorías y geocodificación inversa** para mejorar UX y estructura de datos
+- **seed automático de tickets** al registrar usuario para demostrar la sección de post-desarrollo
 
 Prompts representativos:
 
@@ -116,6 +137,10 @@ Diseña un módulo de soporte con tickets (bug, mejora, consulta) y un endpoint 
 
 ```text
 Agrega categorías de lugares y geocodificación inversa usando OpenStreetMap Nominatim API para mostrar dirección legible en lugar de solo coordenadas.
+```
+
+```text
+Al registrar un usuario nuevo, inserta automáticamente 5 tickets de soporte de ejemplo (bug, mejora, consulta) con distintas prioridades y estados para simular el post-desarrollo del producto.
 ```
 
 Aplicaciones concretas:
