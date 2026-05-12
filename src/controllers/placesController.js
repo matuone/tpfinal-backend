@@ -7,10 +7,11 @@ const getReverseGeocoding = async (lat, lng) => {
       `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
     );
     const data = await response.json();
-    return data.address?.road || data.address?.city || data.display_name || "Ubicación desconocida";
+
+    return data.address?.road || data.address?.city || data.display_name || null;
   } catch (error) {
     console.error("Error en geocodificación inversa:", error);
-    return "Ubicación desconocida";
+    return null;
   }
 };
 

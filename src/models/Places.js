@@ -15,7 +15,7 @@ const placeSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    default: "Ubicación desconocida"
+    default: ""
   },
   date: { type: String, required: true }
 }, {
